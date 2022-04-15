@@ -2,4 +2,5 @@
 yum update -y
 yum install python3-venv -y
 yum install git -y
-git clone https://github.com/fesousa/ambientes-operacionais-bd-trabalho.git
+cd /home/ec2-user
+su ec2-user -c "git clone https://github.com/fesousa/ambientes-operacionais-bd-trabalho.git"
