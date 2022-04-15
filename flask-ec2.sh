@@ -19,3 +19,8 @@ mkdir /var/log/uwsgi
 chown ec2-user:nginx /var/log/uwsgi/
 systemctl start flasktodo
 systemctl enable flasktodo
+mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf-orig
+cp nginx.conf /etc/nginx/nginx.conf
+cp app.conf /etc/nginx/conf.d/app.conf
+systemctl start nginx
+systemctl enable nginx
