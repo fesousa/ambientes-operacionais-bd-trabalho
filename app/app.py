@@ -1,8 +1,9 @@
-from flask import Blueprint
+from flask import Flask
+application = Flask(__name__)
 
-bp = Blueprint('todo', __name__)
-
-@bp.route("/")
+@application.route("/")
 def index():
     return "Hello World!"
 
+if __name__ == "__main__":
+    application.run(host='0.0.0.0', port='8080')
