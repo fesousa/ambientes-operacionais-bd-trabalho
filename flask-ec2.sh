@@ -11,3 +11,4 @@ git clone https://github.com/fesousa/ambientes-operacionais-bd-trabalho.git /hom
 virtualenv venv
 source ./venv/bin/activate
 pip3 install gunicorn flask
+cp app.conf /etc/init/myproject.conf
