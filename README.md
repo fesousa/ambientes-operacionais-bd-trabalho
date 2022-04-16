@@ -114,19 +114,19 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
 
     6.3. Configure os campos:
 
-        a. Endereço IPv4 público EC2: IP público da instãncia EC2 criada
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Endereço IPv4 público EC2: IP público da instãncia EC2 criada
 
-        b. Host Banco de Dados: Endpoint do cluster RDS
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Host Banco de Dados: Endpoint do cluster RDS
 
-        c. Banco de dados: nome do banco de dados criado
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Banco de dados: nome do banco de dados criado
 
-        d. Usuário: usuário do banco de dados
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Usuário: usuário do banco de dados
 
-        e. Senha: senha do banco de dados
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e. Senha: senha do banco de dados
 
-        f. Clique em Salvar
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f. Clique em Salvar
 
-        g. Clique em Voltar
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g. Clique em Voltar
     
     6.4. Clique em SQL
 
