@@ -36,14 +36,21 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
     1.7 A VPC deve conter um Internet Gateway
 
     1.8 A VPC deve conter as tabelas de rotas e associações apropriadas para as subredes
+
+2. Criar 2 grupos de segurança na VPC criada anteriormente:
+
+    2.1. Nome: ec2-sg. Deve permitir a conexão SSH e conexão HTTP de qualquer local
+
+    2.2. Nome: bd-sg. Deve permitir a conexão PostgreSQL somente para o grupo de segurança anterior
     
-2. Criar um bucket S3 com as seguintes características:
+    
+3. Criar um bucket S3 com as seguintes características:
 
-    2.1. O bucket deve ser configurado permitir acesso público
+    3.1. O bucket deve ser configurado permitir acesso público
 
-    2.2 O bucket deve ser configurado para hospedar um site estático
+    3.2 O bucket deve ser configurado para hospedar um site estático
 
-    2.3 O bucket deve ter a seguinte política de segurança. Troque **NOME_BUCKET** pelo nome do sseu bucket:
+    3.3 O bucket deve ter a seguinte política de segurança. Troque **NOME_BUCKET** pelo nome do sseu bucket:
 
     ```json
     {
@@ -59,4 +66,24 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
     }
     ```
 
-   
+    3.4 Coloque no bucket o conteúdo da pasta html deste repositório (https://github.com/fesousa/ambientes-operacionais-bd-trabalho/tree/main/html)
+
+2. Criar uma instância EC2 com seguintes características:
+
+    2.1. Nome: flask-app
+
+    2.2. Imagem: Amazon Linux
+
+    2.3. Tipo de Instância: t2.micro
+
+    2.4. Par de chaves: vockey
+
+    2.4 Utilizar a VPC criada neste trabalho
+
+    2.5 Colocar a instância em uma subrede pública
+
+    2.6 Vincular o grupo de segurança ec2-sg
+
+    2.7 Utilizar o seguinte código em user data:
+
+    https://github.com/fesousa/ambientes-operacionais-bd-trabalho/blob/3822d09faca1f11c160cae658a951bd93673d66c/flask-ec2.sh#L1-L26
