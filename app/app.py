@@ -10,7 +10,7 @@ def index():
         config = None
         with open(f"{os.getcwd()}/app/config.yaml", "r") as file:    
             config= yaml.load(file, Loader=yaml.FullLoader)
-        return f"HOST: {config}"
+        return f"HOST: {type(config)}"
     except Exception as ex:
         return f"{traceback.format_exc()}, {os.getcwd()}"
 
