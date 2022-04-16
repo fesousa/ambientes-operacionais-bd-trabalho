@@ -15,12 +15,13 @@ def index():
 
 @app.route("/config", methods = ['POST'])
 def config():
-    
-    dotenv.load_dotenv(".env")
-    dotenv.set_key(dotenv_file, "HOST", "HOST DB")
+    try:
+        dotenv.load_dotenv(dotenv.find_dotenv())
+        dotenv.set_key(dotenv_file, "HOST", "HOST DB")
 
-    config = dotenv.dotenv_values(".env") 
-    return f"HOST: {config['HOST']}"
+        return f"HOST: {os.environ}"
+    except Exception as ex:
+        return str(ex)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='8080')
