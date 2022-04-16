@@ -45,7 +45,7 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
 
     2.3 O bucket deve ter a seguinte política de segurança. Troque **NOME_BUCKET** pelo nome do sseu bucket:
 
-    '''json
+    ```json
     {
         "Version": "2012-10-17",
         "Statement": [
@@ -57,6 +57,6 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
             }
         ]
     }
-    '''
+    ```
 
    
