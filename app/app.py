@@ -8,7 +8,7 @@ app.secret_key = 'AMBIENTESOPERACIONAIS'
 def index():
     try:
         config = dotenv.dotenv_values(".env") 
-        return f"HOST: {config}"
+        return f"HOST: "
     except Exception as ex:
         return str(ex)
 
