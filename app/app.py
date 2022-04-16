@@ -14,7 +14,7 @@ def index():
  
         return f"HOST: {config}"
     except Exception as ex:
-        return str(ex)
+        return traceback.format_exc()
 
 
 @app.route("/config", methods = ['POST'])
