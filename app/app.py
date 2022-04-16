@@ -75,7 +75,7 @@ def sql():
         if not r:
             r = 'Comando executado com sucesso: '+ sql
         else:
-            r = '\n'.join(r)
+            r = '\n'.join(str(r))
         return r
     except Exception as ex:
         return traceback.format_exc()
