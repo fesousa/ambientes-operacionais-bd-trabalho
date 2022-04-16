@@ -128,6 +128,6 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g. Clique em Voltar
     
-    6.4. Clique em SQL
+&nbsp;&nbsp;&nbsp;&nbsp;;6.4. Clique em SQL
 
-    6.5. Escreva comandos SQL do tipo `CREATE TABLE`, `INSERT` e `SELECT` para testar
+&nbsp;&nbsp;&nbsp;&nbsp;6.5. Escreva comandos SQL do tipo `CREATE TABLE`, `INSERT` e `SELECT` para testar
