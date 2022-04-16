@@ -1,3 +1,4 @@
 Flask==2.1.1
 uwsgi==2.0.20
 python-dotenv==0.20.0
+PyYAML==6.0
