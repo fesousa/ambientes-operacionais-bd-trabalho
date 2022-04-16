@@ -1,5 +1,5 @@
 from flask import Flask
-import dotenv, os
+import dotenv, os, traceback
 
 app = Flask(__name__)
 app.secret_key = 'AMBIENTESOPERACIONAIS'
@@ -22,7 +22,7 @@ def config():
 
         return f"HOST: {os.environ}"
     except Exception as ex:
-        return str(ex)
+        return traceback.format_exc()
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='8080')
