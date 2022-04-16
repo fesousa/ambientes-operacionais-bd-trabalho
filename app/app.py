@@ -21,10 +21,13 @@ def index():
 @app.route("/config", methods = ['POST'])
 def config():
     try:
-        config = None
-        with open(f"{os.getcwd()}/app/config.yaml", "r") as file:
-    
-            config= yaml.load(file, Loader=yaml.FullLoader)
+        config = {}
+        try:
+            with open(f"{os.getcwd()}/app/config.yaml", "r") as file:
+        
+                config= yaml.load(file, Loader=yaml.FullLoader)
+        except:
+            pass
 
         config["HOST"] = request.json['host']
         config["DB"] = request.json['bd']
