@@ -16,8 +16,9 @@ def index():
 @app.route("/config", methods = ['POST'])
 def config():
     try:
-        dotenv.load_dotenv(dotenv.find_dotenv())
-        dotenv.set_key(dotenv.find_dotenv(), "HOST", "HOST DB")
+        dotenv_file = dotenv.find_dotenv()
+        dotenv.load_dotenv(dotenv_file)
+        dotenv.set_key(dotenv_file, "HOST", "HOST DB")
 
         return f"HOST: {os.environ}"
     except Exception as ex:
