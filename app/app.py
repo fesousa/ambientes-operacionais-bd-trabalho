@@ -69,7 +69,7 @@ def sql():
             cur.execute(sql)
             recset = cur.fetchall()
             for rec in recset:
-                r.append(','.join(rec))
+                r.append(','.join([str(value) for value in rec]))
         con.close()
       
         if not r:
