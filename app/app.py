@@ -6,8 +6,11 @@ app.secret_key = 'AMBIENTESOPERACIONAIS'
 
 @app.route("/")
 def index():
-    config = dotenv.dotenv_values(".env") 
-    return f"HOST: {config['HOST']}"
+    try:
+        config = dotenv.dotenv_values(".env") 
+        return f"HOST: {config['HOST']}"
+    except Exception as ex:
+        return ex
 
 
 @app.route("/config", methods = ['POST'])
