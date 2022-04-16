@@ -1,5 +1,5 @@
 from flask import Flask, request
-import yaml, traceback, os
+import yaml, traceback, os, json
 
 app = Flask(__name__)
 app.secret_key = 'AMBIENTESOPERACIONAIS'
@@ -9,7 +9,7 @@ def index():
     try:
         config = None
         with open(f"{os.getcwd()}/app/config.yaml", "r") as file:    
-            config= yaml.load(file, Loader=yaml.FullLoader)
+            config= json.loads(yaml.load(file, Loader=yaml.FullLoader))
         return f"HOST: {config['HOST']}"
     except Exception as ex:
         return f"{traceback.format_exc()}, {os.getcwd()}"
