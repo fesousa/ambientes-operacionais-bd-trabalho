@@ -28,7 +28,7 @@ def config():
         config["USER"] = request.json['usuario']
         config["PWD"] = request.json['senha']
 
-        with open(f"{os.getcwd()}/app/config.yaml", "w") as file:
+        with open(f"{os.getcwd()}/app/config2.yaml", "w") as file:
             yaml.dump(config, file)
       
         return f"HOST: {config}"
