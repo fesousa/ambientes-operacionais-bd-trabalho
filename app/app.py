@@ -46,6 +46,10 @@ def config():
 @app.route("/sql", methods = ['POST'])
 def sql():
     try:
+        r = None
+        sql = request.json['sql'].strip()
+        if not sql.startswith('SELECT') and not sql.startswith('INSERT') or not sql.startswith('CREATE TABLE'):
+            return "Erro ao executar a consulta " + sql
         config = {}
         try:
             with open(f"{os.getcwd()}/app/config.yaml", "r") as file:
@@ -57,15 +61,21 @@ def sql():
         con = psycopg2.connect(host=config["HOST"], database=config["DB"],
         user=config["USER"], password=config["PWD"])
         cur = con.cursor()
-        sql = request.json['sql']
-        r = cur.execute(sql)       
+        cur.execute(sql)       
         con.commit()
-        # cur.execute('select * from cidade')
-        # recset = cur.fetchall()
-        # for rec in recset:
-        # print (rec)
+
+        if sql.startswith('SELECT'):
+            r = []
+            cur.execute(sql)
+            recset = cur.fetchall()
+            for rec in recset:
+                r.append(rec)
         con.close()
       
+        if not r:
+            r = 'Comando executado com sucesso: '+ sql
+        else:
+            r = '\n'.join(r)
         return r
     except Exception as ex:
         return traceback.format_exc()
