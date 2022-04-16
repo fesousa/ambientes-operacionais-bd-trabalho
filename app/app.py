@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask, session
 app = Flask(__name__)
 app.secret_key = 'AMBIENTESOPERACIONAIS'
@@ -8,7 +9,7 @@ def index():
     return "Hello World!"
 
 
-@app.route("/config")
+@app.route("/config", methods = ['POST'])
 def config():
     return f"Session: {session['username']}"
 
