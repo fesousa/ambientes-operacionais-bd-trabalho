@@ -69,13 +69,13 @@ def sql():
             cur.execute(sql)
             recset = cur.fetchall()
             for rec in recset:
-                r.append(rec)
+                r.append(','.join(rec))
         con.close()
       
         if not r:
             r = 'Comando executado com sucesso: '+ sql
         else:
-            r = '\n'.join(str(r))
+            r = '\n'.join(r)
         return r
     except Exception as ex:
         return traceback.format_exc()
