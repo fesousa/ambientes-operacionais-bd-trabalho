@@ -8,8 +8,11 @@ app.secret_key = 'AMBIENTESOPERACIONAIS'
 def index():
     try:
         config = None
-        with open(f"{os.getcwd()}/app/config.yaml", "r") as file:    
-            config= yaml.load(file, Loader=yaml.FullLoader)
+        try:
+            with open(f"{os.getcwd()}/app/config.yaml", "r") as file:    
+                config= yaml.load(file, Loader=yaml.FullLoader)
+        except: 
+            pass
         return f"HOST: {config}"
     except Exception as ex:
         return f"{traceback.format_exc()}, {os.getcwd()}"
@@ -28,7 +31,7 @@ def config():
         config["USER"] = request.json['usuario']
         config["PWD"] = request.json['senha']
 
-        with open(f"{os.getcwd()}/app/config2.yaml", "w") as file:
+        with open(f"{os.getcwd()}/app/config.yaml", "w") as file:
             yaml.dump(config, file)
       
         return f"HOST: {config}"
