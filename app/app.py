@@ -1,5 +1,5 @@
 from flask import Flask
-import yaml, traceback
+import yaml, traceback, os
 
 app = Flask(__name__)
 app.secret_key = 'AMBIENTESOPERACIONAIS'
@@ -14,7 +14,7 @@ def index():
  
         return f"HOST: {config}"
     except Exception as ex:
-        return traceback.format_exc()
+        return f"{traceback.format_exc()}, {os.getcwd()}"
 
 
 @app.route("/config", methods = ['POST'])
