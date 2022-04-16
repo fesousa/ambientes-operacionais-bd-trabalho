@@ -17,7 +17,7 @@ def index():
 def config():
     try:
         dotenv.load_dotenv(dotenv.find_dotenv())
-        dotenv.set_key(dotenv_file, "HOST", "HOST DB")
+        dotenv.set_key(dotenv.find_dotenv(), "HOST", "HOST DB")
 
         return f"HOST: {os.environ}"
     except Exception as ex:
