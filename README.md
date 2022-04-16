@@ -68,22 +68,66 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
 
     3.4 Coloque no bucket o conteúdo da pasta html deste repositório (https://github.com/fesousa/ambientes-operacionais-bd-trabalho/tree/main/html)
 
-2. Criar uma instância EC2 com seguintes características:
+4. Criar uma instância EC2 com seguintes características:
 
-    2.1. Nome: flask-app
+    4.1. Nome: flask-app
 
-    2.2. Imagem: Amazon Linux
+    4.2. Imagem: Amazon Linux
 
-    2.3. Tipo de Instância: t2.micro
+    4.3. Tipo de Instância: t2.micro
 
-    2.4. Par de chaves: vockey
+    4.4. Par de chaves: vockey
 
-    2.4 Utilizar a VPC criada neste trabalho
+    4.4 Utilizar a VPC criada neste trabalho
 
-    2.5 Colocar a instância em uma subrede pública
+    4.5 Colocar a instância em uma subrede pública
 
-    2.6 Vincular o grupo de segurança ec2-sg
+    4.6 Vincular o grupo de segurança ec2-sg
 
-    2.7 Utilizar o seguinte código em user data:
+    4.7 Utilizar o seguinte código em user data:
 
     https://github.com/fesousa/ambientes-operacionais-bd-trabalho/blob/3822d09faca1f11c160cae658a951bd93673d66c/flask-ec2.sh#L1-L26
+
+5. Criar um cluster RDS Aurora:
+
+    5.1. Compatível com PostgreSQL
+
+    5.2. Tipo Serverless
+
+    5.3. Defina um nome de usuário, senha e nome do banco de dados inicial
+
+    5.4. Configure a Unidade de capacidade máxima para  2 ACU
+
+    5.5. Configure para escalar a capacidade para zero ACUs quando o cluster estiver ocioso
+
+    5.6 Coloque o cluster RDS na VPC criada e na subnet privada
+
+    5.7. Associe o grupo de segurança bd-sg. Somente este grupo de segurança deve estar associado.
+
+    5.8. Habilite a API de dados
+
+6. Para testar a solução:
+
+    6.1. Procure pelo endpoint de site do bucket e abra no seu navegador
+
+    6.2. Clique em configurações
+
+    6.3. Configure os campos:
+
+        a. Endereço IPv4 público EC2: IP público da instãncia EC2 criada
+
+        b. Host Banco de Dados: Endpoint do cluster RDS
+
+        c. Banco de dados: nome do banco de dados criado
+
+        d. Usuário: usuário do banco de dados
+
+        e. Senha: senha do banco de dados
+
+        f. Clique em Salvar
+
+        g. Clique em Voltar
+    
+    6.4. Clique em SQL
+
+    6.5. Escreva comandos SQL do tipo `CREATE TABLE`, `INSERT` e `SELECT` para testar
