@@ -1,0 +1,92 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        div {
+            margin: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <form action="/">
+            <input type="submit"  value="VOLTAR"/>
+        </form>
+    
+    </div>
+    <div>
+        <label>
+            Endereço IPv4 público EC2:
+        </label>
+        <input type="text" id="ip" />
+    </div>
+<div>
+    <label>
+        Host Banco de Dados:
+    </label>
+    <input type="text" id="host" />
+</div>
+<div>
+    <label>
+        Banco de dados:
+    </label>
+    <input type="text" id="bd" />
+</div>
+<div>
+    <label>
+        Usuário:
+    </label>
+    <input type="text" id="usuario" />
+</div>
+<div>
+    <label>
+        Senha:
+    </label>
+    <input type="text" id="senha" />
+
+</div>
+<div>
+    <input type="button" id="salvar" value="SALVAR"/>
+
+</div>
+
+<script>
+    let url = ''
+    let name = "ip=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            url = c.substring(name.length, c.length);
+        }
+    }
+
+    $("#salvar").on("click", function(e) {
+        let json= { "host": $("#host").val(),"bd": $("#bd").val(),"usuario": $("#usuario").val(),"senha": $("#senha").val() };
+        url = $("#ip").val()
+        document.cookie = "ip="+url;
+        e.preventDefault();
+        $.ajax({type: "POST",
+            url:  "http://"+url+"/config",
+            data: JSON.stringify(json),
+            contentType: "application/json; charset=utf-8",
+            success:function(result) {
+                alert(result);
+            },
+            error:function(result) {
+                alert('error');
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>

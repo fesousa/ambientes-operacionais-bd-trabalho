@@ -1,0 +1,76 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        div {
+            margin: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <form action="/">
+            <input type="submit"  value="VOLTAR"/>
+        </form>
+    
+    </div>
+<div>
+    
+    <label>
+        SQL:
+    </label>
+    <br/>
+    <textarea rows="10" cols="100" id="sql" ></textarea>
+</div>
+
+<div>
+    <input type="button" id="enviar" value="ENVIAR"/>
+
+</div>
+
+<div>
+ Resultado:
+
+</div>
+<div id="result">
+
+</div>
+
+<script>
+    let url = ''
+    let name = "ip=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            url = c.substring(name.length, c.length);
+        }
+    }
+
+    $("#enviar").on("click", function(e) {
+        var json= { "sql": $("#sql").val()};
+    
+        e.preventDefault();
+        $.ajax({type: "POST",
+            url: "http://"+url+"/sql",
+            data: JSON.stringify(json),
+            contentType: "application/json; charset=utf-8",
+            success:function(result) {
+                $("#result").text(result);
+            },
+            error:function(result) {
+                alert('error');
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>

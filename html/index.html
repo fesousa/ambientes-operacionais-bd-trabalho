@@ -1,0 +1,58 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+       
+<div>
+    <form action="/config.html">
+        <input type="submit"  value="CONFIGURAÇÕES"/>
+    </form>
+
+</div>
+
+<div>
+    <form action="/sql.html">
+        <input type="submit"  value="SQL"/>
+    </form>
+
+</div>
+
+<script>
+    let url = ''
+    let name = "ip=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            url = c.substring(name.length, c.length);
+        }
+    }
+
+    $("#salvar").on("click", function(e) {
+        let json= { "host": $("#host").val(),"bd": $("#bd").val(),"usuario": $("#usuario").val(),"senha": $("#senha").val() };
+        url = $("#ip").val()
+        document.cookie = "ip="+url;
+        e.preventDefault();
+        $.ajax({type: "POST",
+            url: url+"/config",
+            data: JSON.stringify(json),
+            contentType: "application/json; charset=utf-8",
+            success:function(result) {
+                alert(result);
+            },
+            error:function(result) {
+                alert('error');
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>
