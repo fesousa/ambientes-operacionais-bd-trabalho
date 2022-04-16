@@ -47,7 +47,7 @@ def config():
 def sql():
     try:
         r = None
-        sql = request.json['sql'].strip()
+        sql = request.json['sql'].strip().upper()
         if not sql.startswith('SELECT') and not sql.startswith('INSERT') or not sql.startswith('CREATE TABLE'):
             return "Erro ao executar a consulta " + sql
         config = {}
