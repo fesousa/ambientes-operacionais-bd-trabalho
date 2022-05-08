@@ -90,7 +90,7 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
 
 5. Criar um cluster RDS Aurora:
 
-    5.1. Compatível com PostgreSQL
+    5.1. Compatível com PostgreSQL versão 10.18
 
     5.2. Tipo Serverless
 
