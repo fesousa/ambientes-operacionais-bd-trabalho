@@ -21,7 +21,7 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
 
 1. Criar uma VPC com as seguintes características:
 
-    1.1. A VPC deve ter 1019 endereços de IPv4 disponíveis 
+    1.1. A VPC deve ter 1024 endereços de IPv4 disponíveis 
 
     1.2. Duas subredes públicas
 
