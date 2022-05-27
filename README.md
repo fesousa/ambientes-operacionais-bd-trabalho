@@ -94,7 +94,7 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
 
     5.2. Tipo Serverless
 
-    5.3. Defina um nome de usuário, senha e nome do banco de dados inicial
+    5.3. Defina um nome de usuário, senha e nome do banco de dados inicial. O Nome do banco de dados náo é o identificador. O nome é configurado em configurações adicionais
 
     5.4. Configure a Unidade de capacidade máxima para  2 ACU
 
