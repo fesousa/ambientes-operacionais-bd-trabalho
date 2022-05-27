@@ -68,6 +68,7 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
 
     3.4 Coloque no bucket o conteúdo da pasta html deste repositório (https://github.com/fesousa/ambientes-operacionais-bd-trabalho/tree/main/html)
 
+    
 4. Criar uma instância EC2 com seguintes características:
 
     4.1. Nome: flask-app
@@ -87,6 +88,9 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
     4.7 Utilizar o seguinte código em user data:
 
     https://github.com/fesousa/ambientes-operacionais-bd-trabalho/blob/3822d09faca1f11c160cae658a951bd93673d66c/flask-ec2.sh#L1-L26
+
+
+    Obs: Cuidado que ao copiar o código ele insere um espaço antes de cada comando, fazendo com que o ambiente não seja criado corretamente. Remova o espaço no início de cada comando, se houver.
 
 5. Criar um cluster RDS Aurora:
 
