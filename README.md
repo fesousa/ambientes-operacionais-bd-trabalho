@@ -118,7 +118,7 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Host Banco de Dados: Endpoint do cluster RDS
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Banco de dados: nome do banco de dados criado
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Banco de dados: nome do banco de dados criado (não é o identificador da instância)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Usuário: usuário do banco de dados
 
