@@ -70,7 +70,7 @@ A entrega deverá ser feita até a data especificada no cronograma (ver plano de
 
     3.5. Procure pelo endpoint de site do bucket e abra no seu navegador para testar. Você deve ver a seguinte tela:
 
-    <img src="" />
+    <img src="https://github.com/fesousa/ambientes-operacionais-bd-trabalho/raw/main/img/s3.png" />
 
     
 4. Criar uma instância EC2 com seguintes características:
