@@ -87,40 +87,50 @@ A entrega deverá ser feita até a data especificada no cronograma (ver plano de
 
     4.5 Colocar a instância em uma subrede pública
 
-    4.6 Vincular o grupo de segurança ec2-sg
+    4.6. Habilitar atribuição automática de IP Público
 
-    4.7 Utilizar o seguinte código em user data:
+    4.7 Vincular o grupo de segurança ec2-sg
+
+    4.8 Utilizar o seguinte código em user data (Dados do usuário):
 
     https://github.com/fesousa/ambientes-operacionais-bd-trabalho/blob/3822d09faca1f11c160cae658a951bd93673d66c/flask-ec2.sh#L1-L26
 
 
     Obs: Cuidado que ao copiar o código ele insere um espaço antes de cada comando, fazendo com que o ambiente não seja criado corretamente. Remova o espaço no início de cada comando, se houver.
 
-5. Criar um cluster RDS Aurora:
+5. Criar um grupo de sub-redes de banco de dados no RDS
 
-    5.1. Compatível com PostgreSQL versão 10.18
+    5.1. Deve estar na VPC criada neste projeto
 
-    5.2. Tipo Serverless
+    5.2. Deve conter apenas as subredes provadas da VPC
 
-    5.3. Defina um nome de usuário, senha e nome do banco de dados inicial. O Nome do banco de dados náo é o identificador. O nome é configurado em configurações adicionais
+6. Criar um cluster RDS Aurora:
 
-    5.4. Configure a Unidade de capacidade máxima para  2 ACU
+    6.1. Compatível com PostgreSQL versão 11.13
 
-    5.5. Configure para escalar a capacidade para zero ACUs quando o cluster estiver ocioso
+    6.2. Tipo Serverless (Tecnologia sem servidor)
 
-    5.6 Coloque o cluster RDS na VPC criada e na subnet privada
+    6.3. Defina um nome de usuário, senha e nome do banco de dados inicial. O Nome do banco de dados náo é o identificador. O nome é configurado em configuração adicional.
 
-    5.7. Associe o grupo de segurança bd-sg. Somente este grupo de segurança deve estar associado.
+    6.4. Configure a Unidade de capacidade mínima e máxima para  2 ACU.
 
-    5.8. Habilite a API de dados
+    6.5. Configure para escalar a capacidade para zero ACUs quando o cluster estiver ocioso
 
-6. Para testar a solução:
+    6.6 Coloque o cluster RDS na VPC criada e na subnet privada
 
-    6.1. Procure pelo endpoint de site do bucket e abra no seu navegador
+    6.7 Selecione o grupo de subredes criado anteriormente
 
-    6.2. Clique em configurações
+    6.8. Associe o grupo de segurança bd-sg. Somente este grupo de segurança deve estar associado.
 
-    6.3. Configure os campos:
+    6.9. Habilite a API de dados
+
+7. Para testar a solução:
+
+    7.1. Procure pelo endpoint de site do bucket e abra no seu navegador
+
+    7.2. Clique em configurações
+
+    7.3. Configure os campos:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Endereço IPv4 público EC2: IP público da instãncia EC2 criada
 
@@ -136,6 +146,6 @@ A entrega deverá ser feita até a data especificada no cronograma (ver plano de
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g. Clique em Voltar
     
-&nbsp;&nbsp;&nbsp;&nbsp;;6.4. Clique em SQL
+&nbsp;&nbsp;&nbsp;&nbsp;7.4. Clique em SQL
 
-&nbsp;&nbsp;&nbsp;&nbsp;6.5. Escreva comandos SQL do tipo `CREATE TABLE`, `INSERT` e `SELECT` para testar
+&nbsp;&nbsp;&nbsp;&nbsp;7.5. Escreva comandos SQL do tipo `CREATE TABLE`, `INSERT` e `SELECT` para testar

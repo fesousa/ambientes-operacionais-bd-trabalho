@@ -58,8 +58,7 @@ def sql():
         except:
             raise Exception("Conexão não configurada")
 
-        con = psycopg2.connect(host=config["HOST"], database=config["DB"],
-        user=config["USER"], password=config["PWD"])
+        con = psycopg2.connect(host=config["HOST"], database=config["DB"], user=config["USER"], password=config["PWD"])
         cur = con.cursor()
         cur.execute(sql)       
         con.commit()
