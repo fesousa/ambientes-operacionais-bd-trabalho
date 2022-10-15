@@ -2,7 +2,7 @@
 
 Este repositório contém a descrição e códigos necessários para o trabalho aplicado da disciplina de Ambientes Operacionais.
 
-Utilize o ambiente do curso "AWS Academy Learner Lab - Foundation Services" para fazer o trabalho. |Este ambiente persiste até o fechamento do curso.
+Utilize o ambiente do curso "AWS Academy Learner Lab - Associate Services" para fazer o trabalho. Este ambiente persiste até o fechamento do curso, e fica  disponível aproximadamente 1 ano apos o inicio do semestre, para estudo
 
 ## Objetivo
 
@@ -14,7 +14,7 @@ O trabalho deve ser feito em **grupos de até 5 alunos**.
 
 ## Entrega
 
-A entrega deverá ser feita até a data especificada no cronograma. O grupo deverá gravar um vídeo mostrando a solução e entregar uma figura com a arquitetura da solução. Utilize https://app.diagrams.net/ para fazer o desenho da arquitetura. O vídeo deve mostrar evidências de todas as tarefas descritas a seguir. 
+A entrega deverá ser feita até a data especificada no cronograma (ver plano de ensino no classroom). O grupo deverá gravar um vídeo mostrando a solução e entregar uma figura com a arquitetura da solução. Utilize https://app.diagrams.net para fazer o desenho da arquitetura. O vídeo deve mostrar evidências de todas as tarefas descritas a seguir. 
 
 
 ## Tarefas
@@ -27,7 +27,7 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
 
     1.3. Duas subredes privadas.
 
-    1.4. Cada subrede deve conter 59 endereços de IPv4 disponíveis
+    1.4. Cada subrede deve conter 27 endereços de IPv4 disponíveis
     
     1.5. Utilizar duas zonas de disponibilidade diferentes. Uma subrede pública e uma privada deve estar em cada zona de disponibilidade
 
@@ -50,7 +50,7 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
 
     3.2 O bucket deve ser configurado para hospedar um site estático
 
-    3.3 O bucket deve ter a seguinte política de segurança. Troque **NOME_BUCKET** pelo nome do sseu bucket:
+    3.3 O bucket deve ter a seguinte política de segurança. Troque **NOME_BUCKET** pelo nome do seu bucket:
 
     ```json
     {
@@ -67,6 +67,10 @@ A entrega deverá ser feita até a data especificada no cronograma. O grupo deve
     ```
 
     3.4 Coloque no bucket o conteúdo da pasta html deste repositório (https://github.com/fesousa/ambientes-operacionais-bd-trabalho/tree/main/html)
+
+    3.5. Procure pelo endpoint de site do bucket e abra no seu navegador para testar. Você deve ver a seguinte tela:
+
+    <img src="" />
 
     
 4. Criar uma instância EC2 com seguintes características:
