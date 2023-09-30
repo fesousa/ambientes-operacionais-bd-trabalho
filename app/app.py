@@ -5,6 +5,12 @@ import psycopg2
 app = Flask(__name__)
 app.secret_key = 'AMBIENTESOPERACIONAIS'
 
+@app.route("/test",methods = ['GET'] )
+def test():
+    return "ok"
+
+
+
 @app.route("/")
 def index():
     try:
