@@ -102,27 +102,23 @@ A entrega deverá ser feita até a data especificada no cronograma (ver plano de
 
     5.1. Deve estar na VPC criada neste projeto
 
-    5.2. Deve conter apenas as subredes provadas da VPC
+    5.2. Deve conter apenas as subredes privadas da VPC
 
 6. Criar um cluster RDS Aurora:
 
-    6.1. Compatível com PostgreSQL versão 11.13
+    6.1. Compatível com PostgreSQL
 
-    6.2. Tipo Serverless (Tecnologia sem servidor)
+    6.2. Modelo de Dev/Test
 
-    6.3. Defina um nome de usuário, senha e nome do banco de dados inicial. O Nome do banco de dados náo é o identificador. O nome é configurado em configuração adicional.
+    6.3. Defina um nome de usuário, senha e nome do banco de dados inicial. O Nome do banco de dados náo é o identificador. O nome do banco é configurado em configuração adicional.
 
-    6.4. Configure a Unidade de capacidade mínima e máxima para  2 ACU.
+    6.4. Escolha uma Classe de intância t (mais barata)
 
-    6.5. Configure para escalar a capacidade para zero ACUs quando o cluster estiver ocioso
+    6.5. Coloque o cluster RDS na VPC criada e na subnet privada
 
-    6.6 Coloque o cluster RDS na VPC criada e na subnet privada
+    6.6. Selecione o grupo de subredes criado anteriormente
 
-    6.7 Selecione o grupo de subredes criado anteriormente
-
-    6.8. Associe o grupo de segurança bd-sg. Somente este grupo de segurança deve estar associado.
-
-    6.9. Habilite a API de dados
+    6.7. Associe o grupo de segurança bd-sg. Somente este grupo de segurança deve estar associado.
 
 7. Para testar a solução:
 
