@@ -14,7 +14,7 @@ O trabalho deve ser feito em **grupos de até 5 alunos**.
 
 ## Entrega
 
-A entrega deverá ser feita até a data especificada no cronograma (ver plano de ensino no classroom). O grupo deverá gravar um vídeo mostrando a solução e entregar uma figura com a arquitetura da solução. Utilize https://app.diagrams.net para fazer o desenho da arquitetura. O vídeo deve mostrar evidências de todas as tarefas descritas a seguir. 
+A entrega deverá ser feita até a data especificada no cronograma (ver plano de ensino no classroom). O grupo deverá gravar um vídeo de até **10 minutos** mostrando a solução e entregar uma figura com a arquitetura da solução. Utilize https://app.diagrams.net para fazer o desenho da arquitetura. O vídeo deve mostrar evidências de todas as tarefas descritas a seguir. 
 
 
 ## Tarefas
